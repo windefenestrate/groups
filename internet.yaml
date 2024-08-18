@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=./defengroup.schema.json
+name:
+  en: Internet access
+letter: i
+installs:
+- id: firefox
+  winget_id: Mozilla.Firefox
+  name: Mozilla Firefox
+  publisher: Mozilla
+  license: MPL-2.0
+  alternatives:
+    - name: Google Chrome
+    - name: Microsoft Edge
+    - name: Safari
+    - name: Brave
+    - name: Opera
+    - name: Vivaldi
+  purpose:
+    en: Access information on the Web.
+  installer:
+    # consider using the msix installer inside the wim instead (see winget-pkgs recipe)
+    version: "129.0"
+    # TODO: should account for the user's locale
+    # may also want some shortcut for generating this url based on version (and locale)
+    # please make sure to use the msi and not the exe when updating
+    url: https://download-installer.cdn.mozilla.net/pub/firefox/releases/129.0/win64/en-US/Firefox%20Setup%20129.0.msi
+    extension: msi
+    size: 66301952
+    sha256: 8cc9729c5c637537314283c3c3d7d5ca861c1be131a226329d11fd46f62c8bdf
+    flags:
+      standard: msi

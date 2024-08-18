@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=./defengroup.schema.json
+name:
+  en: "Basic multimedia"
+letter: m

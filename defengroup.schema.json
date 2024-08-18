@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://defenestrate.nodomain/defengroup.schema.json",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Object holding localized names for the group {'language': 'translated_string'}",
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "letter": {
+      "description": "A single, unique letter to identify the group. Will likely be used in disk image names",
+      "type": "string",
+      "pattern": "^[a-z]$"
+    },
+    "installs": {
+      "description": "Array of objects holding info about software provided in the group",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "A simple project-wide identifier for a software. Must match ^[a-z0-9]*$",
+            "type": "string",
+            "pattern": "^[a-z0-9]*$"
+          },
+          "winget_id": {
+            "description": "Identifier of the relevant manifest in winget-pkgs",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]*.[a-zA-Z0-9]*$"
+          },
+          "name": {
+            "description": "Displayed name for the software. Not localized, just a string.",
+            "type": "string"
+          },
+          "homepage": {
+            "description": "URL to the software's online homepage.",
+            "type": "string",
+            "format": "uri"
+          },
+          "publisher": {
+            "description": "Name of person or organization that publishes the software",
+            "type": "string"
+          },
+          "license": {
+            "description": "License under which the software is publicly available. An SPDX identifier among those of FSF and/or OSI-approved licenses.",
+            "type": "string",
+            "enum": ["0BSD", "AAL", "AFL-1.1", "AFL-1.2", "AFL-2.0", "AFL-2.1", "AFL-3.0", "AGPL-3.0-only", "AGPL-3.0-or-later",
+            "Apache-1.0", "Apache-1.1", "Apache-2.0", "APL-1.0", "APSL-1.0", "APSL-1.1", "APSL-1.2", "APSL-2.0",
+            "Artistic-1.0", "Artistic-1.0-cl8", "Artistic-1.0-Perl", "Artistic-2.0", "BitTorrent-1.1", "BlueOak-1.0.0",
+            "BSD-1-Clause", "BSD-2-Clause", "BSD-2-Clause-Patent", "BSD-3-Clause", "BSD-3-Clause-Clear", "BSD-3-Clause-LBNL", "BSD-4-Clause",
+            "BSL-1.0", "CAL-1.0", "CAL-1.0-Combined-Work-Exception", "CATOSL-1.1", "CC-BY-4.0", "CC-BY-SA-4.0", "CC0-1.0", "CDDL-1.0",
+            "CECILL-2.0", "CECILL-2.1", "CECILL-B", "CECILL-C", "CERN-OHL-P-2.0", "CERN-OHL-S-2.0", "CERN-OHL-W-2.0", "ClArtistic",
+            "CNRI-Python", "Condor-1.1", "CPAL-1.0", "CPL-1.0", "CUA-OPL-1.0", "ECL-1.0", "ECL-2.0", "EFL-1.0", "EFL-2.0", "Entessa",
+            "EPL-1.0", "EPL-2.0", "EUDatagrid", "EUPL-1.1", "EUPL-1.2", "Fair", "Frameworx-1.0", "FSFAP", "FTL", 
+            "GFDL-1.1-only", "GFDL-1.1-or-later", "GFDL-1.2-only", "GFDL-1.2-or-later", "GFDL-1.3-only", "GFDL-1.3-or-later",
+            "gnuplot", "GPL-2.0-only", "GPL-2.0-or-later", "GPL-3.0-only", "GPL-3.0-or-later", "HPND", "ICU", "IJG", "iMatix", "Imlib2", "Intel",
+            "IPA", "IPL-1.0", "ISC", "Jam", "LGPL-2.0-only", "LGPL-2.0-or-later", "LGPL-2.1-only", "LGPL-2.1-or-later", "LGPL-3.0-only", "LGPL-3.0-or-later",
+            "LiLiQ-P-1.1", "LiLiQ-R-1.1", "LiLiQ-Rplus-1.1", "LPL-1.0", "LPL-1.02", "LPPL-1.2", "LPPL-1.3a", "LPPL-1.3c", "MirOS", "MIT", "MIT-0", "MIT-Modern-Variant",
+            "Motosoto", "MPL-1.0", "MPL-1.1", "MPL-2.0", "MPL-2.0-no-copyleft-exception", "MS-PL", "MS-RL", "MulanPSL-2.0", "Multics", "NASA-1.3", "NCSA",
+            "NGPL", "Nokia", "NOSL", "NPL-1.0", "NPL-1.1", "NPOSL-3.0", "NTP", "OCLC-2.0", "ODbL-1.0",
+            "OFL-1.0", "OFL-1.1", "OFL-1.1-no-RFN", "OFL-1.1-RFN",
+            "OGTSL", "OLDAP-2.3", "OLDAP-2.7", "OLDAP-2.8",
+            "OLFL-1.3", "OpenSSL", "OSET-PL-2.1", "OSL-1.0", "OSL-1.1", "OSL-2.0", "OSL-2.1", "OSL-3.0", "PHP-3.0", "PHP-3.01", "PostgreSQL",
+            "Python-2.0", "QPL-1.0", "RPL-1.1", "RPL-1.5", "RPSL-1.0", "RSCPL", "Ruby", "SGI-B-2.0", "SimPL-2.0", "SISSL", "SISSL-1.2", "Sleepycat",
+            "SMLNJ", "SPL-1.0", "UCL-1.0", "Unicode-3.0", "Unicode-DFS-2016", "Unlicense", "UPL-1.0", "Vim", "VSL-1.0", "W3C", "Watcom-1.0", "WTFPL",
+            "X11", "XFree86-1.1", "xinetd", "Xnet", "YPL-1.1", "Zend-2.0", "Zimbra-1.3", "Zlib", "ZPL-2.0", "ZPL-2.1"]
+          },
+          "alternatives": {
+            "description": "Array of {name, platform} for known alternative software. Specify platform if not cross-platform.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {"type": "string"},
+                "platform": {"type": "string"}
+              }
+            }
+          },
+          "purpose": {
+            "description": "Localization map for a short description of the software's purpose.",
+            "type": "object",
+            "additionalProperties": {"type": "string"}
+          },
+          "installer": {
+            "description": "Object containing properties for an installer of the software.",
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "string"
+              }, 
+              "url": {
+                "description": "Download URL for this installer. Must resolve directly or HTTP redirect to the installer file.",
+                "type": "string",
+                "format": "uri"
+              },
+              "extension": {
+                "description": "Extension for the installer filename, identifying its format. Filename will be id dot extension",
+                "type": "string",
+                "enum": ["exe", "msi"]
+              },
+              "size": {
+                "description": "Size in bytes of the installer file",
+                "type": "integer"
+              },
+              "sha256": {
+                "description": "Lowercase hexadecimal SHA-256 hash of the installer file. Please check from winget-pkgs, the official download page, if present and your own calculation.",
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "flags": {
+                "properties": {
+                  "standard": {
+                    "description": "Defined name of a standard command to run this installer in a non-interactive mode. See enum in schema",
+                    "enum": ["msi", "nsis", "inno", "installshield"]
+                  },
+                  "extend": {
+                    "description": "Appended to the end of the standard command after a space.",
+                    "type": "string"
+                  },
+                  "custom": {
+                    "description": "Command to be executed to run installer in a non-interactive mode, if not using standard. Use variables {insfilepath}, {startmenugroup}",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "required": ["version", "url", "extension", "size", "sha256", "flags"]
+          }
+        },
+        "required": ["id", "winget_id", "name", "homepage", "publisher", "license", "purpose", "installer"]
+      }
+    }
+  }
+}

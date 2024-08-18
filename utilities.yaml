@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=./defengroup.schema.json
+name:
+  en: "Miscellaneous utilities"
+letter: u

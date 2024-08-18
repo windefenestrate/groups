@@ -1,0 +1,8 @@
+# These commands should:
+# - do a non-interactive installation
+# - show its progress
+# - (preferably) allow user to cancel
+# - (when possible) install the start menu shortcut in the {startmenugroup}
+# - not automatically reboot the system or run a program
+
+inno: '{insfilepath} /SILENT /SUPPRESSMSGBOXES /NORESTART /SP- /GROUP="{startmenugroup}" /ALLUSERS'
