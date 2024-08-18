@@ -6,3 +6,6 @@
 # - not automatically reboot the system or run a program
 
 inno: '{insfilepath} /SILENT /SUPPRESSMSGBOXES /NORESTART /SP- /GROUP="{startmenugroup}" /ALLUSERS'
+
+# https://learn.microsoft.com/en-us/windows/win32/msi/command-line-options
+msi: '{insfilepath} /qb- /norestart'
