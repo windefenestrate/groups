@@ -1,0 +1,62 @@
+<style>
+    .error {
+        background-color: lightcoral;
+    }
+
+</style>
+
+<h1>{{ group.name.en }}</h1>
+
+{% if not vsuccess %}
+<details class="error">
+    <summary>Invalid data</summary>
+    {% for m in vmessages %}
+    <ul>
+        <li>{{m}}</li>
+    </ul>
+    {% endfor %}
+</details>
+{% endif %}
+
+{% for p in group.installs %}
+<h2 id="program-{{p.id}}">
+    {{p.name}}
+    <i>{{p.id}}</i>
+</h2>
+
+{% if p.homepage %}
+<a href="{{p.homepage}}">homepage</a>
+{% endif %}
+{% if p.winget_id %}
+&bullet;
+{% set wgi = p.winget_id %}
+{% set wgl = p.winget_id[0]|lower %}
+{% set wgp = p.winget_id|replace(".", "/") %}
+<a title="view all winget-pkgs manifests for this program"
+href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/{{wgl}}/{{wgp}}" target="_blank">winget</a>
+{% endif %}
+</p>
+
+<p>{{p.purpose.en}}</p>
+<p>published by {{p.publisher}} &bullet; {{p.license}}</p>
+
+{% if p.alternatives %}
+<p>alts:</p>
+<ul>
+{% for a in p.alternatives %}
+<li>{{ a.name }} {% if a.platform %}({{a.platform}}){% endif %}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+<h3>Installer</h3>
+version: {{p.installer.version}}
+{% if p.winget_id %}
+(<a title="view winget-pkgs installer manifest for this version"
+href="https://github.com/microsoft/winget-pkgs/blob/master/manifests/{{wgl}}/{{wgp}}/{{p.installer.version}}/{{wgi}}.installer.yaml" target="_blank">winget</a>{% endif %})
+<p><a href="{{p.installer.url}}">download</a></p>
+<p>{{p.installer.size or "?"}} bytes</p>
+<p>known sha256: <code>{{p.installer.sha256 or "?"}}</code></p>
+
+
+{% endfor %}

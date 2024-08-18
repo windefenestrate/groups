@@ -2,6 +2,10 @@
 Allowed software licenses in the schema are from the [SPDX License List](https://spdx.org/licenses/).
 I've only included those who are FSF or OSI-approved.
 
+## build info webpages
+pip install -r web/requirements.txt
+python3 web/build.py
+
 ## miscellaneous links
 ### validating yaml with a json schema
 - [How to configure YAML schema to make editing files easier](https://developers.redhat.com/blog/2020/11/25/how-to-configure-yaml-schema-to-make-editing-files-easier)

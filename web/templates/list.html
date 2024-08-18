@@ -1,0 +1,5 @@
+<ul>
+{% for gid, group in groups.items() %}
+    <li><a href="{{gid}}.html" target="group-content">{{group.name.en}}</a></li>
+{% endfor %}
+</ul>
