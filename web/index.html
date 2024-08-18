@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defenestrate >> Software Groups</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .columns {
+            flex-grow: 1;
+            display: flex;
+        }
+
+        .nav-left {
+            width: 33%;
+        }
+
+        .content {
+            flex-grow: 1;
+        }
+
+        .columns iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Defenestrate >> Software Groups
+    </header>
+    <div class="columns">
+        <nav class="nav-left">
+            <iframe name="groups-list" src="list.html" frameborder="0">
+            </iframe>
+        </nav>
+        <main class="content">
+            <iframe name="group-content" src="" frameborder="0"></iframe>
+        </main>
+    </div>
+    <footer>trans rights</footer>
+</body>
+</html>
