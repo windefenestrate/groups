@@ -10,7 +10,7 @@ installs:
   publisher: "Igor Pavlov"
   license: "https://www.7-zip.org/license.txt"
   purpose:
-    en: "Extract and create compressed file archives in zip, 7z and other formats."
+    en: "Extract and create compressed file archives in zip, 7z, rar and other formats."
   installer:
     version: "24.07"
     url: "https://www.7-zip.org/a/7z2407-x64.exe"
