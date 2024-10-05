@@ -83,8 +83,13 @@
             "additionalProperties": {"type": "string"}
           },
           "documentation": {
-            "tyoe": "object",
+            "type": "object",
             "properties": {
+              "support": {
+                "description": "URL to an official page providing various support information, such as contacts and community links.",
+                "type": "string",
+                "format": "uri"
+              },
               "user_guide": {
                 "description": "URL to an official user's guide for the software.",
                 "type": "string",
