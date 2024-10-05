@@ -11,6 +11,9 @@ installs:
   license: "https://www.7-zip.org/license.txt"
   purpose:
     en: "Extract and create compressed file archives in zip, 7z, rar and other formats."
+  documentation:
+    support: "https://www.7-zip.org/support.html"
+    faq: "https://www.7-zip.org/faq.html"
   installer:
     version: "24.07"
     url: "https://www.7-zip.org/a/7z2407-x64.exe"
@@ -31,6 +34,8 @@ installs:
     platform: "macOS"
   purpose:
     en: "Visualize disk usage."
+  documentation:
+    support: "https://windirstat.net/contact.html"
   installer:
     version: "1.1.2"
     url: "https://sourceforge.net/projects/windirstat/files/windirstat/1.1.2%20installer%20re-release%20%28more%20languages%21%29/windirstat1_1_2_setup.exe/download"
@@ -49,6 +54,10 @@ installs:
     - name: "CCleaner"
   purpose:
     en: "Clean up files to save space or for privacy and security."
+  documentation:
+    support: "https://www.bleachbit.org/help"
+    user_guide: "https://docs.bleachbit.org/"
+    faq: "https://docs.bleachbit.org/doc/frequently-asked-questions.html"
   installer:
     version: "4.6.0"
     url: "https://www.bleachbit.org/download/file/t?file=BleachBit-4.6.0-setup.exe"
@@ -68,6 +77,8 @@ installs:
     platform: "Linux"
   purpose: 
     en: "Calculate and check file hashes."
+  documentation:
+    user_guide: "https://github.com/namazso/OpenHashTab?tab=readme-ov-file#usage"
   installer:
     version: "3.0.4"
     url: "https://github.com/namazso/OpenHashTab/releases/download/v3.0.4/OpenHashTab_setup.exe"
