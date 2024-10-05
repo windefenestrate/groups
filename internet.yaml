@@ -17,6 +17,11 @@ installs:
     - name: Vivaldi
   purpose:
     en: Access information on the Web.
+  documentation:
+    # these redirect to an appropriate localized version
+    support: "https://support.mozilla.org/products/firefox"
+    user_guide: "https://support.mozilla.org/kb/get-started-firefox-overview-main-features"
+    faq: "https://support.mozilla.org/kb/frequently-asked-questions"
   installer:
     # consider using the msix installer inside the wim instead (see winget-pkgs recipe)
     version: "129.0"
