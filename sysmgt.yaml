@@ -6,6 +6,7 @@ installs:
 - id: unigetui
   winget_id: SomePythonThings.WingetUIStore
   name: "UniGetUI"
+  homepage: "https://www.marticliment.com/unigetui/"
   publisher: "Marti Climent"
   license: "MIT"
   alternatives:
@@ -14,6 +15,9 @@ installs:
   - name: "Package manager CLIs"
   purpose:
     en: "Install, update and remove software."
+  documentation:
+    support: "https://github.com/marticliment/UniGetUI/wiki"
+    faq: "https://github.com/marticliment/UniGetUI/?tab=readme-ov-file#frequently-asked-questions"
   installer:
     version: "3.1.1"
     url: "https://github.com/marticliment/UniGetUI/releases/download/3.1.1/UniGetUI.Installer.exe"
@@ -34,6 +38,10 @@ installs:
   - name: "TeamViewer"
   purpose:
     en: "Access your computer or another computer running RustDesk remotely."
+  documentation:
+    support: "https://rustdesk.com/docs/technical-support/"
+    user_guide: "https://rustdesk.com/docs/"
+    faq: "https://github.com/rustdesk/rustdesk/wiki/FAQ"
   installer:
     version: "1.2.7"
     url: "https://github.com/rustdesk/rustdesk/releases/download/1.2.7/rustdesk-1.2.7-x86_64.msi"
