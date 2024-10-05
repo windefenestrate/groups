@@ -82,6 +82,21 @@
             "type": "object",
             "additionalProperties": {"type": "string"}
           },
+          "documentation": {
+            "tyoe": "object",
+            "properties": {
+              "user_guide": {
+                "description": "URL to an official user's guide for the software.",
+                "type": "string",
+                "format": "uri"
+              },
+              "faq": {
+                "description": "URL to an official FAQ document for the software.",
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
           "installer": {
             "description": "Object containing properties for an installer of the software.",
             "type": "object",
